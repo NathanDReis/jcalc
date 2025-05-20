@@ -24,8 +24,6 @@
       justify-content: center;
     }
     .img {
-      position: absolute;
-      right: 0;
       width: 80px;
       height: 80px;
       background: url(./Jcalc.png) no-repeat center;
@@ -33,11 +31,19 @@
       border-radius: 50%;
       border: 1px dashed black;
     }
+
+    @media (min-width: 480px) {
+      .img {
+        position: absolute;
+        right: 0;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <main class="d-grid gap-5">
+  
+  <main class="d-grid gap-5 p-5">
     <h1 class="display-5">Juros Compostos</h1>
     <form>
       <fieldset>
@@ -73,7 +79,7 @@
           <option selected value="mensal">Mensal</option>
           <option value="anual">Anual</option>
         </select>
-        <div class="d-flex mt-5 align-items-center gap-5 position-relative">
+        <div class="d-flex mt-5 flex-wrap align-items-center gap-5 position-relative">
           <div class="d-grid">
             <label class="form-label">Total Investido</label>
             <span id="investido">R$ 0,00</span>
