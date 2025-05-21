@@ -19,8 +19,11 @@ keyboard.addEventListener('click', (e) => {
   if (key === 'C')
     return input.value = '';
 
-  if (key === 'back') 
-    return input.value = input.value.toString().slice(0, -1);
+  if (key === 'back') {
+    const val = input.value.split("");
+    val.pop();
+    return input.value = val.join("");
+  }
   
   if (key !== '=') 
     return input.value += key;
