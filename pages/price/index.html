@@ -70,53 +70,21 @@
     </div>
   </nav>
   <main class="d-grid gap-5 p-5">
-    <h1 class="fw-lighter">Juros Compostos</h1>
-    <form>
-      <fieldset>
-        <legend class="input-group mb-4">
-            <span class="input-group-text" id="basic-addon1">
-              <i class="bi bi-calculator"></i>
-            </span>
-            <input type="text" class="form-control" placeholder="0.00" aria-describedby="basic-addon1" disabled value="R$ 0,00">
-        </legend>
-        <div class="row">
-          <div class="col">
-            <div class="mb-3">
-              <label for="capital" class="form-label">Capital inicial</label>
-              <input type="number" class="form-control" id="capital" name="capital" placeholder="0.00">
-            </div>
-            <div class="mb-3">
-              <label for="taxa" class="form-label">Taxa</label>
-              <input type="number" class="form-control" id="taxa" name="taxa" placeholder="0.00">
-            </div>
-          </div>
-          <div class="col">
-            <div class="mb-3">
-              <label for="aporte" class="form-label">Aporte mensal</label>
-              <input type="number" class="form-control" id="aporte" name="aporte" placeholder="0.00">
-            </div>
-            <div class="mb-3">
-              <label for="tempo" class="form-label">Tempo</label>
-              <input type="number" class="form-control" id="tempo" name="tempo" placeholder="0">
-            </div>
-          </div>
-        </div>
-        <select class="form-select" name="periodo">
-          <option selected value="mensal">Mensal</option>
-          <option value="anual">Anual</option>
-        </select>
-        <div class="d-flex mt-5 flex-wrap align-items-center gap-5 position-relative">
-          <div class="d-grid">
-            <label class="form-label">Total Investido</label>
-            <span id="investido">R$ 0,00</span>
-          </div>
-          <div class="d-grid">
-            <label class="form-label">Total Juros</label>
-            <span id="juros">R$ 0,00</span>
-          </div>
-        </div>
-      </fieldset>
-    </form>
+    <fieldset class="border p-4">
+      <legend>Preço Justo</legend>
+      <div>
+        <label for="lpa" class="form-label">LPA:</label>
+        <input type="number" id="lpa" class="form-control" placeholder="Digite o LPA" required>
+      </div>
+      <div>
+        <label for="vpa" class="form-label">VPA:</label>
+        <input type="number" id="vpa" class="form-control" placeholder="Digite o VPA" required>
+      </div>
+      <div class="d-flex justify-content-between align-items-center">
+        <button type="submit" class="btn btn-primary mt-3" onclick="calcularPrecoJustoComLpaVpa()">Calcular</button>
+        <span id="valorJusto"></span>
+      </div>
+    </fieldset>
   </main>
 </body>
 </html>
